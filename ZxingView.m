@@ -8,18 +8,28 @@
     NSString *_onColor;
     NSString *_offColor;
     NSString *_text;
+    NSString *_format;
 }
 
 -(void)setText: (NSString *)text
 {
+    NSLog(@"In setText ");
+    NSLog(text);
     if (_image) {
         [_image removeFromSuperview];
     }
     _text = text;
 }
 
+-(void)setFormat: (NSString *)format
+{
+    NSLog(@"In setFormat ");
+    NSLog(format);
+}
+
 -(void)layoutSubviews
 {
+    NSLog(@"In layoutSubviews");
     [super layoutSubviews];
     NSError *zebraError = nil;
     ZXEncodeHints *hints = [ZXEncodeHints hints];

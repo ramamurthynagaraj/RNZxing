@@ -11,5 +11,6 @@ RCT_EXPORT_MODULE()
 }
 
 RCT_EXPORT_VIEW_PROPERTY(text, NSString);
+RCT_EXPORT_VIEW_PROPERTY(format, NSString);
 
 @end
