@@ -2,4 +2,4 @@ rootProject.name = 'Example'
 
 include ':app'
 include ':rnzxing'
-project(':rnzxing').projectDir = new File(rootProject.projectDir, '../../android')
+project(':rnzxing').projectDir = new File(rootProject.projectDir, '../node_modules/Zxing/android')
