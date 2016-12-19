@@ -48,7 +48,7 @@ class BarcodeComponent extends Component {
  Name | Description | Default | Type
 ------|-------------|----------|-----------
 text | text to be encoded in barcode - required | none | string
-format | Format of the barcode( one of 'AZTEC', 'CODABAR', 'CODE_39', 'CODE_93','CODE_128', 'DATA_MATRIX', 'EAN_8','EAN_13', 'ITF', 'MAXICODE', 'PDF_417','QR_CODE', 'RSS_14', 'RSS_EXPANDED', 'UPC_A', 'UPC_E', 'UPC_EAN_EXTENSION' - required | - | string
+format | Format of the barcode - required | - |  'AZTEC', 'CODABAR', 'CODE_39', 'CODE_93','CODE_128', 'DATA_MATRIX', 'EAN_8','EAN_13', 'ITF', 'MAXICODE', 'PDF_417','QR_CODE', 'RSS_14', 'RSS_EXPANDED', 'UPC_A', 'UPC_E', 'UPC_EAN_EXTENSION'
 width | width of barcode | 200 | int
 height | height of barcode | 200 | int
 
