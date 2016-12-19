@@ -5,4 +5,7 @@
 
 @property (nonatomic, copy) NSString *text;
 @property (nonatomic, copy) NSString *format;
+@property int *width;
+@property int *height;
+
 @end
