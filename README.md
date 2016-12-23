@@ -24,9 +24,19 @@ project(':rnzxing').projectDir = new File(rootProject.projectDir, '../node_modul
 * Add ZXing and rnzxing to dependecies in build.gradle of the app
 ```
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile project(':rnzxing')
     // https://mvnrepository.com/artifact/com.google.zxing/core
     compile group: 'com.google.zxing', name: 'core', version: '3.3.0'
+```
+* Add ZxingPackage to react native package
+
+```
+protected List<ReactPackage> getPackages() {
+    return Arrays.<ReactPackage>asList(
+        ...
+        new ZxingPackage()
+    );
+}
 ```
 
 ## Usage
