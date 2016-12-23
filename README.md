@@ -49,6 +49,7 @@ class BarcodeComponent extends Component {
         return (
             <View>
                 <Zxing text="Text to be embedded in barcode"
+                    format="AZTEC"
                     style={{height: 200 width: 200}}/>
             </View>)
     }
