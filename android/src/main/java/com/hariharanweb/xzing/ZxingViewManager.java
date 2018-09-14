@@ -97,6 +97,10 @@ public class ZxingViewManager extends SimpleViewManager<ImageView> {
         BitMatrix result;
         try {
             result = writer.encode(contentsToEncode, format, img_width, img_height, hints);
+            if(format == BarcodeFormat.valueOf("QR_CODE"))
+            {
+                result = deleteWhite(result);//二维码去除白边方法；注：条形码去白边后不可用。
+            }
         } catch (IllegalArgumentException iae) {
             throw new Exception("Unsupported barcode format");
         }
@@ -124,5 +128,20 @@ public class ZxingViewManager extends SimpleViewManager<ImageView> {
             }
         }
         return null;
+    }
+    private static BitMatrix deleteWhite(BitMatrix matrix) {
+        int[] rec = matrix.getEnclosingRectangle();
+        int resWidth = rec[2] + 1;
+        int resHeight = rec[3] + 1;
+ 
+        BitMatrix resMatrix = new BitMatrix(resWidth, resHeight);
+        resMatrix.clear();
+        for (int i = 0; i < resWidth; i++) {
+            for (int j = 0; j < resHeight; j++) {
+                if (matrix.get(i + rec[0], j + rec[1]))
+                    resMatrix.set(i, j);
+            }
+        }
+        return resMatrix;
     }
 }
